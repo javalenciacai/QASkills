@@ -6,6 +6,31 @@ A comprehensive skill-based system for Senior QA Engineers covering the entire s
 
 This project implements an orchestrator-driven approach where a master coordinator delegates work to specialized QA skills. Every task goes through the orchestrator, which identifies required skills, searches for missing ones, and coordinates execution.
 
+## Installation
+
+### Install All Skills
+```bash
+npx skills add javalenciacai/QASkills --all
+```
+
+### Install Specific Skills
+```bash
+# Install individual skills
+npx skills add javalenciacai/QASkills --skill test-design-istqb
+npx skills add javalenciacai/QASkills --skill test-execution-manager
+npx skills add javalenciacai/QASkills --skill defect-lifecycle-manager
+```
+
+### Install for Specific Agents
+```bash
+# Install for specific AI agents
+npx skills add javalenciacai/QASkills --agent claude-code --all
+npx skills add javalenciacai/QASkills --agent cursor --all
+```
+
+### Browse & Discover
+Visit [skills.sh/javalenciacai/QASkills](https://skills.sh/javalenciacai/QASkills) to explore all available skills.
+
 ## Architecture
 
 ```
@@ -186,10 +211,41 @@ User: "Review requirements and create E2E tests"
 
 ## Getting Started
 
-1. Review the main `SKILL.md` to understand the Senior QA Engineer role
-2. Explore individual skills in `.agents/skills/` directory
-3. When making requests, let the orchestrator guide the workflow
-4. Install additional skills as needed using `npx skills add`
+### Using the Skills
+1. Install the skills (see [Installation](#installation) above)
+2. Review the main `SKILL.md` to understand the Senior QA Engineer role
+3. Explore individual skills in `.agents/skills/` directory
+4. When making requests, let the orchestrator guide the workflow
+
+### For Contributors
+1. Fork this repository
+2. Use the **skill-creator** skill to generate new skill structure
+3. Place new skills in `.agents/skills/[skill-name]/`
+4. Follow the SKILL.md template
+5. Update `skills.json` with skill metadata
+6. Submit a pull request
+
+## Sharing & Publishing
+
+### Share Your Skills
+Once you've created or modified skills, you can share them with the community:
+
+1. **Push to GitHub**
+   ```bash
+   git add .
+   git commit -m "feat: Add new skill or update existing skills"
+   git push origin main
+   ```
+
+2. **Submit to skills.sh**
+   - Your public GitHub repository is automatically discoverable
+   - Users can install via: `npx skills add yourusername/YourRepo`
+   - Visit [skills.sh](https://skills.sh) to see your skills listed
+
+3. **Create a Release (Recommended)**
+   - Tag your version: `git tag -a v1.0.0 -m "Release v1.0.0"`
+   - Push tags: `git push --tags`
+   - Create a GitHub Release with changelog
 
 ## Quality Standards
 
@@ -210,9 +266,11 @@ To add a new skill:
 1. Use the **skill-creator** skill to generate structure
 2. Place in `.agents/skills/[skill-name]/`
 3. Follow SKILL.md template
-4. Update this README
-5. Test through orchestrator
+4. Update `skills.json` with skill metadata
+5. Update this README
+6. Test through orchestrator
+7. Submit a pull request
 
 ## License
 
-[Include license information]
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
