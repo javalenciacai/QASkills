@@ -10,26 +10,34 @@ This project implements an orchestrator-driven approach where a master coordinat
 
 ### Install All Skills
 ```bash
-npx skills add javalenciacai/QASkills --all
+# Install all 11 skills (requires --full-depth to discover nested skills)
+npx skills add javalenciacai/QASkills --all --full-depth
 ```
 
 ### Install Specific Skills
 ```bash
-# Install individual skills
-npx skills add javalenciacai/QASkills --skill test-design-istqb
-npx skills add javalenciacai/QASkills --skill test-execution-manager
-npx skills add javalenciacai/QASkills --skill defect-lifecycle-manager
+# Install individual skills (use --full-depth to access nested skills)
+npx skills add javalenciacai/QASkills --skill test-design-istqb --full-depth
+npx skills add javalenciacai/QASkills --skill test-execution-manager --full-depth
+npx skills add javalenciacai/QASkills --skill defect-lifecycle-manager --full-depth
+```
+
+### List Available Skills
+```bash
+# See all available skills before installing
+npx skills add javalenciacai/QASkills --list --full-depth
 ```
 
 ### Install for Specific Agents
 ```bash
 # Install for specific AI agents
-npx skills add javalenciacai/QASkills --agent claude-code --all
-npx skills add javalenciacai/QASkills --agent cursor --all
+npx skills add javalenciacai/QASkills --agent claude-code --all --full-depth
+npx skills add javalenciacai/QASkills --agent cursor --all --full-depth
 ```
 
 ### Browse & Discover
-Visit [skills.sh/javalenciacai/QASkills](https://skills.sh/javalenciacai/QASkills) to explore all available skills.
+- Visit [GitHub Repository](https://github.com/javalenciacai/QASkills) to explore all available skills
+- Check [releases](https://github.com/javalenciacai/QASkills/releases) for version updates
 
 ## Architecture
 
